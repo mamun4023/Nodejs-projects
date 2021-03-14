@@ -1,11 +1,14 @@
 
-<div  class="row">
- <div class="col-md"></div>
+<div  class="row jumbotron">
+
  <div class="col-md">
-     <div class="jumbotron">
-        <h3 class="text-center" > User Registration Form </h3>
+    <a href="/"><i style="font-size: 50px;" class="fas fa-laptop-house text-primary"></i></a>
+ </div>
+ <div class="col-md">
+     <div class="jumbotron shadow p-3 mb-5 bg-white rounded">
+        <h3 class="text-center text-white bg-primary p-4" > Registration Form </h3>
          <form autocomplete="off" method="post" action="/registration">
-            <label>Fullname</label>
+            <label>Full Name</label>
             <input class="form-control" type="text" name="name" />
             
             <label>Email</label>
@@ -15,12 +18,24 @@
             <label>Password</label>
             <input class="form-control" type="password" name="password" />
             
+            <label>Confirm Password</label>
+            <input class="form-control" type="password" name="confirm-password" />
             
+            <label></label>
+            <select class="form-control text-primary my-2"> 
+               <option class="form"> Select...</option>
+               <option value="student"> Student </option>
+               <option value="teacher"> Teacher </option>
+               <option value="admin"> Admin</option>
+            </select>
             <hr/>
 
             <button class="form-control btn btn-primary" > Submit </button>
          </form>
+          <P class="text-center">
+             Have an account? Then
           <a href="/login">login</a>
+         </P>
      </div>
  </div>
  <div class="col-md"></div>

@@ -23,7 +23,7 @@
 
 
   <!-- navbar start -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-lighter">
+  <nav class="navbar navbar-expand-lg navbar-light bg-lighter" >
     <a class="navbar-brand" href="#"> <span style="font-size: 30px;" class="text-primary"> <i class="fas fa-book-reader"></i> </span> </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -31,17 +31,17 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/"> Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item ">
+          <a class="nav-link text-primary" href="/"> Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Service</a>
+          <a class="nav-link  text-primary" href="#">Service</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Department
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
             <div class="dropdown-divider"></div>
@@ -50,29 +50,30 @@
         </li>
   
         <li class="nav-item">
-             <a class="nav-link" href="#"> About Us </a>
+             <a class="nav-link text-primary" href="/about"> About Us </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#"> Contact </a>
+          <a class="nav-link text-primary" href="/contact"> Contact </a>
      </li>
      
      <li class="nav-item">
-      <a class="nav-link" href="#">  </a>
+      <a class="nav-link text-primary" href="#"> Magazine </a>
      </li>
 
         <li class="nav-item">
-           <form class="form-inline my-2 my-lg-0 " >
-              <input class="form-control mr-sm-2" style="width: 400px;" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+           <form class="form-inline my-2 my-lg-0 " method="get" action="/search" >
+              <input class="form-control mr-sm-2" style="width: 400px;" type="search" placeholder="Type book name..." aria-label="Search">
+              <button class="btn btn-outline-primary my-2 my-sm-0">Search</button>
             </form>
         </li>
         
-        
-        <li class="nav-item mx-5 px-5" >
-           <a href="#"> <i style="font-size: 30px;" class="fab fa-facebook-square"></i></a>
-           <a href="#"> <i style="font-size: 30px;" class="fab fa-twitter-square"></i></a>
+        <!-- social media -->
+        <li class="nav-item  px-5" >
+           <a href="#"> <i style="font-size: 30px; color: #4267B2;" class="fab fa-facebook-square"></i></a>
+           <a href="#"> <i style="font-size: 30px; color: #1DA1F2;" class="fab fa-twitter-square"></i></a>
            <a href="#"> <i style="font-size: 30px;" class="fab fa-linkedin"></i></a>
+           <a href="#"> <i style="font-size: 30px; color: #E60023;" class="fab fa-pinterest-square "></i></a>
         </li>
       </ul>
       
@@ -129,18 +130,60 @@
 <!-- Banner section send -->
 
 
+<!-- body start -->
+
+<div class="jumbotron my-0 p-3">
+  <h4 class="text-center"> Top Reading book in this week </h4>
+
+ 
+</div>
+
+
+<!-- body end -->
+
+
+
 
 
 
 
 <!-- footer start -->
-<div class="jumbotron">
+<div class="jumbotron my-0 bg-dark text-white">
+  <div class="row">
+    <div class="col-md">
+      <h4> Address  </h4>
+      
 
+      <p>Dhaka University of Engineering and Technology,Gazipur,1702. Shimultoli Road</p>
+
+    </div>
+
+    <div class="col-md">
+      <h4> Update</h4>
+      <p> During the covid pandemic,DUET central library has been close. Students are connected through internet and can collect soft copy of the book.</p>
+    </div>
+
+    <div class="col-md">
+
+      <h4 > Social Contact </h4>
+      <p> <b>Email : </b> duet-library@duet.bd</p>
+      <hr class="text-left" style="background-color: white; "/>
+      <a href="#"> <i style="font-size: 40px; color: #4267B2;" class="fab fa-facebook-square m-2"></i></a>
+      <a href="#"> <i style="font-size: 40px; color: #1DA1F2;" class="fab fa-twitter-square m-2 "></i></a>
+      <a href="#"> <i style="font-size: 40px; color: #E60023;" class="fab fa-pinterest-square m-2 "></i></a>
+      <a href="#"> <i style="font-size: 40px; color: #DB4437;" class="fab fa-google m-2 "></i></a>
+    </div>
+
+
+  </div>
 
 </div>
 
 
 <!-- footer end -->
+
+
+
 
 
 

@@ -51,13 +51,19 @@ const router = require('./routes/userRoute');
 app.use(router);
 
 
+// include searching router
+const searchRouter = require('./routes/serarchRoute');
+app.use(searchRouter);
+
 
 
 // default route
-
 app.get('*', (req, res)=> {
     res.send("page not found")
 })
+
+
+
 
 app.listen(3000, ()=> {
     console.log("server is running....")
