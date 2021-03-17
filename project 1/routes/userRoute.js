@@ -30,10 +30,10 @@ router.get('/contact', (req, res)=> {
     res.render("contact", {})
 })
 
-router.get('/search', (req,res)=> {
-    res.render('search', {})
+router.get('/books', (req,res)=> {
+    res.render('books', {})
 })
-
+ 
 
 
 router.post("/registration",userController.registration)

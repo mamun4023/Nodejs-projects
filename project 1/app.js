@@ -51,9 +51,9 @@ const router = require('./routes/userRoute');
 app.use(router);
 
 
-// include searching router
-const searchRouter = require('./routes/serarchRoute');
-app.use(searchRouter);
+// // include searching router
+// const searchRouter = require('./routes/serarchRoute');
+// app.use(searchRouter);
 
 
 
