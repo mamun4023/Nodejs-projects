@@ -5,6 +5,9 @@ const userController = require("../controllers/userController");
 
 
 // All display page  routes
+router.get('/', (req,res)=> {
+    res.render("home", {})
+})
 router.get('/register', (req, res)=> {
     if(req.session.isAuth == true)
        res.redirect("/dashboard")
@@ -19,7 +22,7 @@ router.get('/login', (req, res)=> {
 })
 
 router.get('/dashboard', userController.isAuth, (req, res)=> {
-    res.render("dashboard", {})
+    res.render("dashboard/admin_dashboard", {})
 })
 
 router.get('/about',  (req,res)=> {
@@ -34,6 +37,7 @@ router.get('/books', (req,res)=> {
     res.render('books', {})
 })
  
+
 
 
 router.post("/registration",userController.registration)

@@ -43,10 +43,13 @@ app.use(session({
 
 
 
-// use public folder static and display index.html file
-app.use('/', express.static(path.join(__dirname, 'public')))
+// // use public folder static and display index.html file
+// app.use('/', express.static(path.join(__dirname, 'public')))
 
-//import userRoute
+// public folder initialize
+app.use(express.static("public"));
+
+// //import userRoute
 const router = require('./routes/userRoute');
 app.use(router);
 
@@ -58,10 +61,6 @@ app.use(router);
 
 
 // default route
-app.get('*', (req, res)=> {
-    res.send("page not found")
-})
-
 
 
 
