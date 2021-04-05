@@ -105,6 +105,18 @@ function Auth(req, res, next){
     }
 }
 
+function Auth(req, res, next){
+    const token = req.header('auth-token');
+    if(!token) return res.send("Access Denied")
+
+    try{
+        const verified = jwt.verify(token, 'secret');
+        req.user = verified;
+        next();
+    } catch(err){
+        res.send("Invalid token")
+    }
+}
 
 // authorized route
 // in header on postman set token 

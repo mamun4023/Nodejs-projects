@@ -5,16 +5,33 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 // model included
 const userModel = require('../../models/users');
+const passport = require('passport');
 
+
+//load validator
+
+const validateRegisterInput = require('../../validator/register');
 
 
 // registration route
 
 router.post('/register', (req, res)=> {
+
+    const {errors, isValid} = validateRegisterInput(req.body);
+
+    // // cheack validation
+    // if(errors){
+
+    //     return res.status(400).json(errors)
+    // }
+
     userModel.findOne({email : req.body.email})
         .then(user=> {
             if(user)
-                return res.status(400).json({email : "Email already exists"})
+            {
+                errors.email = "Email is already exists";
+                return res.status(400).json(errors.email)
+            }
             else{
 
                 const avatar =   gravatar.url(req.body.email, {
@@ -63,7 +80,7 @@ router.post('/login', (req,res)=> {
            // sign jwt token
             jwt.sign(payload,
                      "secret key", 
-                     {expiresIn : 3600},
+                     {expiresIn : 3600*60},
                      (err, token)=> {
                          res.json({
                              success : true,
@@ -77,6 +94,20 @@ router.post('/login', (req,res)=> {
 })
 
 
+// router.get("/test", passport.authenticate('jwt', {session : false}), (req, res)=> {
+//     res.send("success to land")
+// })
+
+
+router.get("/test",  (req, res)=> {
+    res.send("success to land")
+})
+
+ 
+
+router.get("/dd", (req, res)=> {
+    res.send("ddd")
+})
 
 
 
