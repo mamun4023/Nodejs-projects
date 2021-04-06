@@ -15,29 +15,36 @@ function validateRegisterInput(data){
 
 
 
-    if(!validator.isLength(data.name, {min : 2, max : 30})){
+   // name field validate
+    if(validator.isEmpty(data.name)){
+        errors.name = "Name is required";
+    }
+    else if(!validator.isLength(data.name, {min : 2, max : 30})){
         errors.name = "Name must be between 2 and 30 character";
     }
-
-    if(validator.isEmpty(data.name)){
-        errors.name = "Name field is required";
-    }
-
+  
+    // email validation
     if(validator.isEmpty(data.email)){
-        errors.email = "Email field is required";
+        errors.email = "Email is required";
+    }else if(!validator.isEmail(data.email)){
+        errors.email = "Invalid email"
     }
-
-    if(!validator.isLength(data.password, {min : 6, max : 30})){
-        errors.password = "Password must be at least 6 characters";
+    
+    
+    // password validate
+    if(validator.isEmpty(data.password)){
+        errors.password = "Password is required";
     }
-
+    
+    // confirm passwrod validate
     if(validator.isEmpty(data.password2)){
-        errors.password2 = "Confirm password filed requried";
-    }
-
-    if(validator.requals(data.password, data.password2)){
+        errors.password2 = "Confirm password is required";
+    }else if(!validator.equals(data.password, data.password2)){
         errors.password2 = "Password must match"
     }
+
+  
+ 
 
     return {
         errors,

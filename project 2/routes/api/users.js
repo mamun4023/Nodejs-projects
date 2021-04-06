@@ -11,6 +11,7 @@ const passport = require('passport');
 //load validator
 
 const validateRegisterInput = require('../../validator/register');
+const validateLoginInput = require('../../validator/login');
 
 
 // registration route
@@ -19,11 +20,11 @@ router.post('/register', (req, res)=> {
 
     const {errors, isValid} = validateRegisterInput(req.body);
 
-    // // cheack validation
-    // if(errors){
+    // cheack validation
+    if(!isValid){
 
-    //     return res.status(400).json(errors)
-    // }
+        return res.status(400).json(errors)
+    }
 
     userModel.findOne({email : req.body.email})
         .then(user=> {
@@ -62,7 +63,16 @@ router.post('/register', (req, res)=> {
 });
 
 
+
+
 router.post('/login', (req,res)=> {
+    
+    const {errors, isValid} = validateLoginInput(req.body);
+    
+    if(!isValid){
+        return res.status(400).json(errors)
+    }
+
     const email = req.body.email;
     const password = req.body.password;
     
@@ -104,12 +114,6 @@ router.get("/test",  (req, res)=> {
 })
 
  
-
-router.get("/dd", (req, res)=> {
-    res.send("ddd")
-})
-
-
 
 
 
